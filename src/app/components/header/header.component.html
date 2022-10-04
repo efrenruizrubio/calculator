@@ -6,8 +6,18 @@
     <aside class="header__aside" [class.active]="isMenuOpen">
       <nav class="header__aside__nav">
         <ul class="header__aside__nav__ul">
-          <li class="header__aside__nav__ul__li" *ngFor="let link of options">
-            {{ link.name }}
+          <li *ngFor="let link of options; index as i">
+            <button
+              class="header__aside__nav__ul__element"
+              (click)="changeActiveLink(i)"
+            >
+              <img
+                class="header__aside__nav__ul__icon"
+                [src]="link.icon"
+                [class.active]="link.active"
+              />
+              {{ link.name }}
+            </button>
           </li>
         </ul>
       </nav>

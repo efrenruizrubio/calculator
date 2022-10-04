@@ -19,4 +19,9 @@ export class HeaderComponent implements OnInit {
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
   }
+
+  changeActiveLink(i: number): void {
+    this.headerService.changeActiveLink(i);
+    this.options = this.headerService.getLinks();
+  }
 }

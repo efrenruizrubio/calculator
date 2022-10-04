@@ -8,7 +8,7 @@
     gap: 1.5rem;
   }
   &__menu {
-    background: transparent;
+    background: none;
     border: 1px solid transparent;
     padding: 0.9rem;
     aspect-ratio: 1/1;
@@ -72,6 +72,27 @@
       padding-top: 6rem;
       height: 100%;
       background-color: var(--aside-background-color);
+
+      &__ul {
+        &__icon {
+          margin-left: 1rem;
+          width: 2.5rem;
+          height: auto;
+          border-left: 1px solid transparent;
+          &.active {
+            border-left: 1px solid var(--active-border-color);
+          }
+        }
+        &__element {
+          display: flex;
+          align-items: center;
+          padding: 1rem 0;
+          gap: 1.5rem;
+          width: 100%;
+          font-size: 1.6rem;
+          font-family: "Fira Sans", sans-serif;
+        }
+      }
     }
     &.active {
       visibility: visible;
@@ -81,8 +102,6 @@
       position: absolute;
       inset: 0;
       z-index: -1;
-      background: none;
-      border: none;
       backdrop-filter: blur(2px);
     }
   }
