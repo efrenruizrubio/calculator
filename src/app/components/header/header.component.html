@@ -1,0 +1,27 @@
+<header class="header">
+  <div class="header__left">
+    <button class="header__menu" (click)="toggleMenu()">
+      <span class="header__menu__hamburger" [class.active]="isMenuOpen"></span>
+    </button>
+    <aside class="header__aside" [class.active]="isMenuOpen">
+      <nav class="header__aside__nav">
+        <ul class="header__aside__nav__ul">
+          <li class="header__aside__nav__ul__li" *ngFor="let link of options">
+            {{ link.name }}
+          </li>
+        </ul>
+      </nav>
+      <button
+        aria-label="Close Button"
+        class="header__aside__button"
+        (click)="toggleMenu()"
+      ></button>
+    </aside>
+    <h1 class="header__title">test</h1>
+  </div>
+  <div class="header__right">
+    <button class="header__menu history">
+      <span>test</span>
+    </button>
+  </div>
+</header>

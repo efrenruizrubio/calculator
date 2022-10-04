@@ -1,1 +1,27 @@
-/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:wght@700&display=swap");
+
+:root {
+  --background-color: #e5e5e5;
+  --aside-background-color: #e6e6e6;
+  --hover-color: #dcdada;
+  --black: #000;
+  --hover-border-color: #797979;
+  --active-color: #b9b8b8;
+  --active-border-color: #0078d7;
+  --equality-sign: #8abae0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: "Fira Sans", sans-serif;
+}
