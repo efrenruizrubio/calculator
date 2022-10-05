@@ -10,12 +10,9 @@
             <button
               class="header__aside__nav__ul__element"
               (click)="changeActiveLink(i)"
+              [class.active]="link.active"
             >
-              <img
-                class="header__aside__nav__ul__icon"
-                [src]="link.icon"
-                [class.active]="link.active"
-              />
+              <img class="header__aside__nav__ul__icon" [src]="link.icon" />
               {{ link.name }}
             </button>
           </li>
@@ -27,11 +24,19 @@
         (click)="toggleMenu()"
       ></button>
     </aside>
-    <h1 class="header__title">test</h1>
+    <h1 class="header__title">{{ activeName }}</h1>
   </div>
   <div class="header__right">
-    <button class="header__menu history">
+    <button class="header__menu history" (click)="toggleHistory()">
       <span>test</span>
     </button>
+    <div class="header__history" [class.active]="isHistoryMenuOpen">
+      <div class="header__history__section"><h2>History</h2></div>
+      <button
+        aria-label="Close Button"
+        class="header__history__button"
+        (click)="toggleHistory()"
+      ></button>
+    </div>
   </div>
 </header>

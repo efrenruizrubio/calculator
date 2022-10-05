@@ -13,6 +13,14 @@
     padding: 0.9rem;
     aspect-ratio: 1/1;
     z-index: 3;
+
+    &.history {
+      background: none;
+      border: 1px solid transparent;
+      padding: 0.9rem;
+      aspect-ratio: 1/1;
+      z-index: 3;
+    }
     &:hover {
       cursor: pointer;
       background-color: var(--hover-color);
@@ -79,9 +87,6 @@
           width: 2.5rem;
           height: auto;
           border-left: 1px solid transparent;
-          &.active {
-            border-left: 1px solid var(--active-border-color);
-          }
         }
         &__element {
           display: flex;
@@ -91,6 +96,9 @@
           width: 100%;
           font-size: 1.6rem;
           font-family: "Fira Sans", sans-serif;
+          &.active {
+            border-left: 3px solid var(--active-border-color);
+          }
         }
       }
     }
@@ -107,5 +115,30 @@
   }
   &__title {
     font-size: 2rem;
+  }
+  &__history {
+    display: flex;
+    align-items: flex-end;
+    position: fixed;
+    inset: 0;
+    visibility: hidden;
+    transform: translateY(100%);
+    transition: all ease-in-out 0.25s;
+    will-change: transform, visibility;
+    &__section {
+      width: 100%;
+      height: 60%;
+      background-color: var(--aside-background-color);
+    }
+    &.active {
+      visibility: visible;
+      transform: translateY(0);
+    }
+    &__button {
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      backdrop-filter: blur(2px);
+    }
   }
 }

@@ -6,6 +6,9 @@ import { Options } from '@models/index';
 })
 export class HeaderService {
   options: Options[] = [];
+  activeName: string = 'Standard';
+  menuState: boolean = false;
+  historyState: boolean = false;
 
   constructor() {
     this.options = [
@@ -41,7 +44,23 @@ export class HeaderService {
     ];
   }
 
-  getLinks() {
+  getStateMenu(): boolean {
+    return this.menuState;
+  }
+
+  setStateMenu(): void {
+    this.menuState = !this.menuState;
+  }
+
+  getHistoryStateMenu(): boolean {
+    return this.historyState;
+  }
+
+  setHistoryStateMenu(): void {
+    this.historyState = !this.historyState;
+  }
+
+  getLinks(): Options[] {
     return this.options;
   }
 
@@ -50,5 +69,15 @@ export class HeaderService {
       option.active = false;
     });
     this.options[i].active = true;
+
+    this.activeName = this.options[i].name;
+  }
+
+  getActiveName(): string {
+    return this.activeName;
+  }
+
+  setActiveName(i: number): void {
+    this.activeName = this.options[i].name;
   }
 }
