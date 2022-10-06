@@ -1,18 +1,18 @@
 <header class="header">
-  <div class="header__left">
-    <button class="header__menu" (click)="toggleMenu()">
-      <span class="header__menu__hamburger" [class.active]="isMenuOpen"></span>
+  <div class="header_left">
+    <button class="header_menu" (click)="toggleMenu()">
+      <span class="header_menu_hamburger" [class.active]="isMenuOpen"></span>
     </button>
-    <aside class="header__aside" [class.active]="isMenuOpen">
-      <nav class="header__aside__nav">
-        <ul class="header__aside__nav__ul">
+    <aside class="header_aside" [class.active]="isMenuOpen">
+      <nav class="header_aside_nav">
+        <ul class="header_aside_nav_ul">
           <li *ngFor="let link of options; index as i">
             <button
-              class="header__aside__nav__ul__element"
+              class="header_aside_nav_ul_element"
               (click)="changeActiveLink(i)"
               [class.active]="link.active"
             >
-              <img class="header__aside__nav__ul__icon" [src]="link.icon" />
+              <img class="header_aside_nav_ul_icon" [src]="link.icon" />
               {{ link.name }}
             </button>
           </li>
@@ -20,21 +20,39 @@
       </nav>
       <button
         aria-label="Close Button"
-        class="header__aside__button"
+        class="header_aside_button"
         (click)="toggleMenu()"
       ></button>
     </aside>
-    <h1 class="header__title">{{ activeName }}</h1>
+    <h1 class="header_title">{{ activeName }}</h1>
   </div>
-  <div class="header__right">
-    <button class="header__menu" (click)="toggleHistory()">
-      <span class="header__menu__history-icon"></span>
+  <div class="header_right">
+    <button class="header_menu" (click)="toggleHistory()">
+      <span class="header_menu_history-icon icon"></span>
     </button>
-    <div class="header__history" [class.active]="isHistoryMenuOpen">
-      <div class="header__history__section"><h2>History</h2></div>
+    <div class="header_history" [class.active]="isHistoryMenuOpen">
+      <div class="header_history_section">
+        <span
+          *ngIf="!history.length; else elseHistory"
+          class="header_history_section_title"
+          >There's no history yet</span
+        >
+        <ng-template #elseHistory>
+          <div class="header_history_section_history">
+            <div class="header_history_section_history_buttons">
+              <button
+                *ngFor="let element of history"
+                class="header_history_section_history_buttons_element"
+              >
+                {{ element }}
+              </button>
+            </div>
+          </div>
+        </ng-template>
+      </div>
       <button
         aria-label="Close Button"
-        class="header__history__button"
+        class="header_aside_button"
         (click)="toggleHistory()"
       ></button>
     </div>

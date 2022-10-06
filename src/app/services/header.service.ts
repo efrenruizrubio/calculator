@@ -6,6 +6,7 @@ import { Options } from '@models/index';
 })
 export class HeaderService {
   options: Options[] = [];
+  history: string[] = [];
   activeName: string = 'Standard';
   menuState: boolean = false;
   historyState: boolean = false;
@@ -42,6 +43,7 @@ export class HeaderService {
         active: false,
       },
     ];
+    this.history = ['1', '2', '3', '4'];
   }
 
   getStateMenu(): boolean {
@@ -79,5 +81,13 @@ export class HeaderService {
 
   setActiveName(i: number): void {
     this.activeName = this.options[i].name;
+  }
+
+  getHistory(): string[] {
+    return this.history;
+  }
+
+  setHistory(value: string): void {
+    this.history.unshift(value);
   }
 }

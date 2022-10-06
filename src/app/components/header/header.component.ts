@@ -9,6 +9,7 @@ import { Options } from '@models/index';
 })
 export class HeaderComponent implements OnInit {
   options: Options[] = [];
+  history: string[] = [];
   activeName: string = '';
   isMenuOpen: boolean = false;
   isHistoryMenuOpen: boolean = false;
@@ -18,6 +19,7 @@ export class HeaderComponent implements OnInit {
     this.activeName = this.headerService.getActiveName();
     this.isMenuOpen = this.headerService.getStateMenu();
     this.isHistoryMenuOpen = this.headerService.getHistoryStateMenu();
+    this.history = this.headerService.getHistory();
   }
 
   ngOnInit(): void {}
@@ -40,5 +42,10 @@ export class HeaderComponent implements OnInit {
 
     this.options = this.headerService.getLinks();
     this.activeName = this.headerService.getActiveName();
+  }
+
+  addItemToHistory(item: string): void {
+    this.headerService.setHistory(item);
+    this.history = this.headerService.getHistory();
   }
 }
