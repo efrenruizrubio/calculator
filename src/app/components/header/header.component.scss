@@ -14,12 +14,13 @@
     aspect-ratio: 1/1;
     z-index: 3;
 
-    &.history {
-      background: none;
-      border: 1px solid transparent;
-      padding: 0.9rem;
-      aspect-ratio: 1/1;
-      z-index: 3;
+    &__history-icon {
+      display: block;
+      width: 20px;
+      height: 20px;
+      background-image: url("/assets/icons/history.svg");
+      background-repeat: no-repeat;
+      background-size: contain;
     }
     &:hover {
       cursor: pointer;

@@ -27,8 +27,8 @@
     <h1 class="header__title">{{ activeName }}</h1>
   </div>
   <div class="header__right">
-    <button class="header__menu history" (click)="toggleHistory()">
-      <span>test</span>
+    <button class="header__menu" (click)="toggleHistory()">
+      <span class="header__menu__history-icon"></span>
     </button>
     <div class="header__history" [class.active]="isHistoryMenuOpen">
       <div class="header__history__section"><h2>History</h2></div>
