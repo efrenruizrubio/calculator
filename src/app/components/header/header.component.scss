@@ -123,15 +123,42 @@
         padding-left: 1.5rem;
         font-size: 1.4rem;
       }
+      &_history {
+        height: 80%;
+      }
       &_history,
       &_history_buttons {
         display: flex;
         flex-direction: column;
+        align-items: flex-end;
         &_buttons {
+          width: 100%;
+          overflow: auto;
+          margin-bottom: 1rem;
+
           &_element {
-            text-align: end;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 0.5rem;
+            width: 100%;
+            padding: 1rem 1.5rem 0;
+            border: none;
+            font-size: 1.5rem;
+            &_text:nth-child(2) {
+              font-weight: 700;
+              font-size: 2rem;
+              padding: 1rem 0;
+            }
           }
         }
+      }
+      &_trash-button {
+        position: fixed;
+        bottom: 0;
+      }
+      &_trash-icon {
+        background-image: url("/assets/icons/trash.svg");
       }
     }
     &.active {

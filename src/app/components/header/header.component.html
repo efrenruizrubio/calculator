@@ -44,9 +44,20 @@
                 *ngFor="let element of history"
                 class="header_history_section_history_buttons_element"
               >
-                {{ element }}
+                <span
+                  class="header_history_section_history_buttons_element_text"
+                  >{{ element }} = <br
+                /></span>
+                <span
+                  class="header_history_section_history_buttons_element_text"
+                >
+                  {{ element | amount }}
+                </span>
               </button>
             </div>
+            <button class="header_menu header_history_section_trash-button">
+              <span class="header_history_section_trash-icon icon"></span>
+            </button>
           </div>
         </ng-template>
       </div>
