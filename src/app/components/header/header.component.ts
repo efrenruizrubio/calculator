@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { HeaderService } from '@services/index';
 import { Options } from '@models/index';
 
@@ -7,7 +7,7 @@ import { Options } from '@models/index';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
   options: Options[] = [];
   history: string[] = [];
   activeName: string = '';
@@ -21,8 +21,6 @@ export class HeaderComponent implements OnInit {
     this.isHistoryMenuOpen = this.headerService.getHistoryStateMenu();
     this.history = this.headerService.getHistory();
   }
-
-  ngOnInit(): void {}
 
   toggleMenu() {
     this.headerService.setStateMenu();

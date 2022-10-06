@@ -5,11 +5,11 @@ import { Options } from '@models/index';
   providedIn: 'root',
 })
 export class HeaderService {
-  options: Options[] = [];
-  history: string[] = [];
-  activeName: string = 'Standard';
-  menuState: boolean = false;
-  historyState: boolean = false;
+  private options: Options[] = [];
+  private history: string[] = [];
+  private activeName: string = 'Standard';
+  private menuState: boolean = false;
+  private historyState: boolean = false;
 
   constructor() {
     this.options = [
