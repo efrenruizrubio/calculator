@@ -8,9 +8,14 @@ import { ButtonsService } from '@services/index';
   styleUrls: ['./list-buttons.component.scss'],
 })
 export class ListButtonsComponent {
-  buttons: Button[] = [];
+  specialButtons: Button[] = [];
+  arithmeticButtons: Button[] = [];
+  numericButtons: Button[] = [];
 
   constructor(private buttonsService: ButtonsService) {
-    this.buttons = this.buttonsService.getButtons();
+    this.specialButtons = this.buttonsService.getFilteredButtons('special');
+    this.arithmeticButtons =
+      this.buttonsService.getFilteredButtons('arithmetic');
+    this.numericButtons = this.buttonsService.getFilteredButtons('numeric');
   }
 }

@@ -1,5 +1,25 @@
 <section>
-  <div class="buttons_special">
-    <app-button *ngFor="let button of buttons" [button]="button"></app-button>
+  <div class="buttons">
+    <div class="special">
+      <app-button
+        *ngFor="let specialButton of specialButtons"
+        [class]="specialButton.type"
+        [button]="specialButton"
+      ></app-button>
+    </div>
+    <div class="arithmetic">
+      <app-button
+        *ngFor="let arithmeticButton of arithmeticButtons"
+        [class]="arithmeticButton.type"
+        [button]="arithmeticButton"
+      ></app-button>
+    </div>
+    <div class="numeric">
+      <app-button
+        *ngFor="let numericButton of numericButtons"
+        [class]="numericButton.type"
+        [button]="numericButton"
+      ></app-button>
+    </div>
   </div>
 </section>

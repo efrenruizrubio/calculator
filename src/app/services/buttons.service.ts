@@ -63,15 +63,15 @@ export class ButtonsService {
       name: '÷',
     },
     {
-      type: 'number',
+      type: 'numeric',
       name: '7',
     },
     {
-      type: 'number',
+      type: 'numeric',
       name: '8',
     },
     {
-      type: 'number',
+      type: 'numeric',
       name: '9',
     },
     {
@@ -79,15 +79,15 @@ export class ButtonsService {
       name: 'x',
     },
     {
-      type: 'number',
+      type: 'numeric',
       name: '4',
     },
     {
-      type: 'number',
+      type: 'numeric',
       name: '5',
     },
     {
-      type: 'number',
+      type: 'numeric',
       name: '6',
     },
     {
@@ -95,15 +95,15 @@ export class ButtonsService {
       name: '-',
     },
     {
-      type: 'number',
+      type: 'numeric',
       name: '1',
     },
     {
-      type: 'number',
+      type: 'numeric',
       name: '2',
     },
     {
-      type: 'number',
+      type: 'numeric',
       name: '3',
     },
     {
@@ -129,7 +129,9 @@ export class ButtonsService {
   ];
   constructor() {}
 
-  getButtons(): Button[] {
-    return this.buttons;
+  getFilteredButtons(filter: string): Button[] {
+    return this.buttons.filter((button) => {
+      return button.type === filter;
+    });
   }
 }
